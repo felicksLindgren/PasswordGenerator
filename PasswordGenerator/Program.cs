@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PasswordGenerator
 {
@@ -10,7 +7,10 @@ namespace PasswordGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(System.Web.Security.Membership.GeneratePassword(20, 10));
+            var pass = System.Web.Security.Membership.GeneratePassword(20, 10);
+            Console.WriteLine(pass);
+            Clipboard.SetText(pass);
+            Console.WriteLine("Copied to clipboard.");
             Console.ReadLine();
         }
     }
