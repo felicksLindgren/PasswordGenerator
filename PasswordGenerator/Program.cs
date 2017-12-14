@@ -5,12 +5,12 @@ namespace PasswordGenerator
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             var pass = System.Web.Security.Membership.GeneratePassword(20, 10);
-            Console.WriteLine(pass);
             Clipboard.SetText(pass);
-            Console.WriteLine("Copied to clipboard.");
+            Console.WriteLine($@"""{pass}"" has been copied to clipboard.");
             Console.ReadLine();
         }
     }
